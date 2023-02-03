@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="">
 <head>
     <meta charset="UTF-8">
     <title>ToDo List</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div class="toDoContainer">
     <div>
-        <input class="input">
-        <button type="button" class="btn btn-add" ></button>
+        <label class="input">
+            <input placeholder="Type Here...">
+        </label>
+        <button type="button" class="btn btn-add">Add</button>
     </div>
-    <div class="toDoList">
+    <div class="toDoListContainer">
         <div class="toDoListItem"></div>
+        <div class="toDoListItemRemove"></div>
     </div>
 
 </div>
 
 </body>
+    <script src="app.js"></script>
 </html>

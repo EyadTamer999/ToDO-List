@@ -4,22 +4,43 @@
     <meta charset="UTF-8">
     <title>ToDo List</title>
     <link href="style.css" rel="stylesheet">
+
+    <!--bootstrap-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js"></script>
+
 </head>
 <body>
-<div class="toDoContainer">
-    <div>
-        <label class="input">
-            <input placeholder="Type Here...">
-        </label>
-        <button type="button" class="btn btn-add">Add</button>
-    </div>
-    <div class="toDoListContainer">
-        <div class="toDoListItem"></div>
-        <div class="toDoListItemRemove"></div>
-    </div>
+<div class="background">
+    <div class="toDoContainer">
+        <div>
+            <label class="input">
+                <input placeholder="Type Here...">
+            </label>
+            <label>
+                <input type="date">
+            </label>
 
+            <div class="btn-group dropright">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    Dropright
+                </button>
+                <div class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                </div>
+            </div>
+
+            <button type="button" class="btn">Add</button>
+
+        </div>
+        <div class="toDoListContainer">
+            <div class="toDoListItem"></div>
+            <div class="toDoListItemRemove"></div>
+        </div>
+
+    </div>
 </div>
-
 </body>
-    <script src="app.js"></script>
+<script src="app.js"></script>
 </html>

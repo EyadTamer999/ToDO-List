@@ -4,14 +4,45 @@
     box-sizing: border-box;
 }
 
+
+html {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: normal !important;
+    height:100%;
+}
+body > div {
+    width:100%;
+    height:100%;
+}
 body {
-    min-height: 100vh;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: normal;
+    height:100%;
+    margin:0;
+    padding:0;
+    background:
+            linear-gradient(45deg,  transparent 0%, transparent 57%, #423246 100%),
+            linear-gradient(-45deg, #1f1f8c 0%, #bb0e5f 0.3%, #28032f 112%,  transparent 11% ),
+            linear-gradient(-90deg, #1f1f8c 100%, #bb0e5f 65%, transparent 20% )
+;
+
+}
+
+.background{
+
+}
+
+.btn{
+    color: white !important;
+    background-color: #9200ff !important;
 }
 
 .toDoListContainer {
 
 }
+
+.input {
+    height: 100%;
+    width: 100%;
+    font-size: xxx-large;
+}
+

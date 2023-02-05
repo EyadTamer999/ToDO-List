@@ -40,9 +40,28 @@ body {
 
 }
 
+.date{
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dropdown{
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .input {
     height: 100%;
     width: 100%;
     font-size: xxx-large;
+    border: none;
+    border-radius: 10px !important;
 }
 
+.toDoListContainer{
+
+}

@@ -14,21 +14,24 @@
 <div class="background">
     <div class="toDoContainer">
         <div>
-            <label class="input">
-                <input placeholder="Type Here...">
-            </label>
             <label>
-                <input type="date">
+                <input class="input" placeholder="Type Here...">
             </label>
 
-            <div class="btn-group dropright">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                    Dropright
-                </button>
-                <div class="dropdown-menu">
-                    <!-- Dropdown menu links -->
-                </div>
+            <label>
+                <input class="date" type="date">
+            </label>
+
+            <div class="dropdown">
+                <label>
+                    <select class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" >
+                        <option value="">High</option>
+                        <option value="">Medium</option>
+                        <option value="">Low</option>
+                        <!-- Dropdown menu links -->
+                    </select>
+                </label>
             </div>
 
             <button type="button" class="btn">Add</button>

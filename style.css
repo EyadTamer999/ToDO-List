@@ -9,59 +9,92 @@ html {
     display: flex !important;
     justify-content: center !important;
     align-items: normal !important;
-    height:100%;
+    height: 100%;
 }
+
 body > div {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 }
+
 body {
-    height:100%;
-    margin:0;
-    padding:0;
-    background:
-            linear-gradient(45deg,  transparent 0%, transparent 57%, #423246 100%),
-            linear-gradient(-45deg, #1f1f8c 0%, #bb0e5f 0.3%, #28032f 112%,  transparent 11% ),
-            linear-gradient(-90deg, #1f1f8c 100%, #bb0e5f 65%, transparent 20% )
-;
+    height: 100%;
+    margin: 40px !important;
+    padding: 10px !important;
+    background: linear-gradient(45deg, transparent 0%, transparent 57%, #423246 100%),
+    linear-gradient(-45deg, #1f1f8c 0%, #bb0e5f 0.3%, #28032f 112%, transparent 11%),
+    linear-gradient(-90deg, #1f1f8c 100%, #bb0e5f 65%, transparent 20%);
 
 }
 
-.background{
-
+div {
+    display: flex;
+    flex-direction: column;
 }
 
-.btn{
+.btn {
+    color: white !important;
+    background-color: #9d0000 !important;
+    width: 30%;
+}
+
+.btn.btn-add {
     color: white !important;
     background-color: #9200ff !important;
+    width: 40% !important;
 }
 
-.toDoListContainer {
-
+.label-add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
-.date{
+label {
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.date {
+    height: 40px;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: whitesmoke;
+    align-content: center;
+    display: flex;
+    background-color: #141619 !important;
+    border: none;
+    border-radius: 10px;
+}
+
+div.toDoContainer {
+    height: 35%;
+    border: none;
+    border-radius: 12px;
+    background-color: whitesmoke;
+}
+
+
+.dropdown {
     height: 100%;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.dropdown{
-    height: 100%;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 .input {
-    height: 100%;
-    width: 100%;
-    font-size: xxx-large;
+    height: 150px;
+    width: 700px;
+    background: #141619;
+    color: whitesmoke;
+    font-size: xx-large;
     border: none;
     border-radius: 10px !important;
 }
 
-.toDoListContainer{
-
-}

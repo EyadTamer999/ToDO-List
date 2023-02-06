@@ -73,8 +73,17 @@ label {
 }
 
 div.toDoContainer {
-    height: 35%;
+    height: 45%;
     border: none;
+    border-radius: 12px;
+    background-color: whitesmoke;
+}
+
+
+div.toDoListContainer {
+    margin-top: 3cm !important;
+    padding-top: 12rem;
+    border: ridge !important;
     border-radius: 12px;
     background-color: whitesmoke;
 }

@@ -15,16 +15,16 @@
     <div class="toDoContainer">
         <div>
             <label>
-                <input class="input" placeholder="Type Here...">
+                <input id="input" class="input" placeholder="Type Here...">
             </label>
 
             <label>
-                <input class="date" type="date">
+                <input id="date" class="date" type="date">
             </label>
 
             <div class="dropdown">
                 <label>
-                    <select class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    <select id="priority" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         <option value="hi">High</option>
                         <option value="med">Medium</option>
@@ -35,7 +35,7 @@
             </div>
 
             <label class="label-add">
-                <button type="button" class="btn btn-add">Add</button>
+                <button type="button" class="btn btn-add" onclick="addToDo()">Add</button>
             </label>
         </div>
         <div class="toDoListContainer">

@@ -82,14 +82,14 @@ div.toDoContainer {
 
 div.toDoListContainer {
     margin-top: 3cm !important;
-    padding-top: 12rem;
+    padding-top: 1rem;
     border: ridge !important;
     border-radius: 12px;
     background-color: whitesmoke;
 }
 
 .toDoListOrderedList{
-
+    display: block;
 }
 
 .dropdown {

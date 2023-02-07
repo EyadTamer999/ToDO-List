@@ -106,7 +106,13 @@ div.toDoListContainer {
     background: #141619;
     color: whitesmoke;
     font-size: xx-large;
-    border: none;
-    border-radius: 10px !important;
+    border: solid;
+    border-radius: 8px !important;
 }
 
+.toDoListItemRemove{
+    margin: 10px;
+    padding: 10px;
+    height: 10px;
+    width: 10px;
+}

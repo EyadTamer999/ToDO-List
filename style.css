@@ -111,8 +111,7 @@ div.toDoListContainer {
 }
 
 .toDoListItemRemove{
-    margin: 10px;
-    padding: 10px;
-    height: 10px;
-    width: 10px;
+
+    height: 20px;
+    width: 20px;
 }

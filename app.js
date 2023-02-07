@@ -2,11 +2,21 @@
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
 
 
+let items = [];
+
 function addToDo() {
-    let txt = document.getElementById("input").value.toString();
-    let date = document.getElementById('date').value.toString();
-    let priority = document.getElementById('priority').value.toString();
+    const txt = document.getElementById("input").value.toString();
+    const date = document.getElementById('date').value.toString();
+    const priority = document.getElementById('priority').value.toString();
     //get our data then add it to a new obj
     //console.log({txt,date,priority});
+    const listItem = {
+        'text': txt,
+        'date': date,
+        'priority': priority
+    };
 
+    for(let i in items){
+        console.log(i.toString());
+    }
 }

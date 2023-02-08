@@ -7,7 +7,9 @@
 
     <!--bootstrap-->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <script src="js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.esm.js"></script>
+    <script src="js/bootstrap.js"></script>
 
 </head>
 <body>
@@ -41,13 +43,13 @@
         <div class="toDoListContainer">
 
             <div>
-                <ol class="toDoListOrderedList">
+                <ol class="toDoListOrderedList" id="toDoListOrderedList">
                    <!--class="toDoListItem"-->
                     <!--each li will have it's own remove
                         so basically we can have each button to refer to an item
                     -->
                     <!--example-->
-                    <li>
+                    <li style="color: red">
                         do work
                         <button class="toDoListItemRemove" >
 
@@ -55,27 +57,10 @@
                         </button>
                     </li>
 
-                    <li>
+                    <li style="color: darkorange">
                         do work
                         <button class="toDoListItemRemove"></button>
                     </li>
-                    <li>
-                        do work
-                        <button class="toDoListItemRemove"></button>
-                    </li>
-                    <li>
-                        do work
-                        <button class="toDoListItemRemove"></button>
-                    </li>
-                    <li>
-                        do work
-                        <button class="toDoListItemRemove"></button>
-                    </li>
-                    <li>
-                        do work
-                        <button class="toDoListItemRemove"></button>
-                    </li>
-
                 </ol>
             </div>
 
@@ -85,5 +70,5 @@
     </div>
 </div>
 </body>
-<script src="app.js"></script>
+<script type="text/javascript" src="./app.js"></script>
 </html>

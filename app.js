@@ -1,22 +1,26 @@
 //take input from text field and date, assing it to an object enrty that will have: content, date, priority, isDone
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
-
-
 let items = [];
 
 function addToDo() {
-    const txt = document.getElementById("input").value.toString();
-    const date = document.getElementById('date').value.toString();
-    const priority = document.getElementById('priority').value.toString();
+    let txt = document.getElementById("input").value.toString();
+    let date = document.getElementById('date').value.toString();
+    let priority = document.getElementById('priority').value.toString();
     //get our data then add it to a new obj
     //console.log({txt,date,priority});
-    const listItem = {
+    let listItem = {
         'text': txt,
         'date': date,
         'priority': priority
     };
 
+    let ol = document.getElementById('toDoListOrderedList');
+
+
     if(listItem.priority.toString() === 'High'){
+        let entry = document.createElement('li');
+        entry.appendChild(document.createTextNode(listItem.text.toString()));
+        ol.appendChild(entry);
         //create relative list item with red color text or smth
     }
     else if(listItem.priority.toString() === 'Medium'){

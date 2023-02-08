@@ -16,17 +16,19 @@ function addToDo() {
 
     let ol = document.getElementById('toDoListOrderedList');
 
+    //console.log(listItem)
 
-    if(listItem.priority.toString() === 'High'){
+    if(listItem.priority.toString() === 'hi'){
         let entry = document.createElement('li');
         entry.appendChild(document.createTextNode(listItem.text.toString()));
         ol.appendChild(entry);
+        console.log('added')
         //create relative list item with red color text or smth
     }
-    else if(listItem.priority.toString() === 'Medium'){
+    else if(listItem.priority.toString() === 'med'){
 
     }
-    else if(listItem.priority.toString() === 'Low'){
+    else if(listItem.priority.toString() === 'low'){
 
     }
 

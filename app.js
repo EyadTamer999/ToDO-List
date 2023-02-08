@@ -16,7 +16,14 @@ function addToDo() {
         'priority': priority
     };
 
-    for(let i in items){
-        console.log(i.toString());
+    if(listItem.priority.toString() === 'High'){
+        //create relative list item with red color text or smth
     }
+    else if(listItem.priority.toString() === 'Medium'){
+
+    }
+    else if(listItem.priority.toString() === 'Low'){
+
+    }
+
 }

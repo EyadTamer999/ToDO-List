@@ -73,7 +73,7 @@ label {
 }
 
 div.toDoContainer {
-    height: 45%;
+    height: 55vh;
     border: none;
     border-radius: 12px;
     background-color: whitesmoke;

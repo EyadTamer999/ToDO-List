@@ -18,18 +18,25 @@ function addToDo() {
 
     //console.log(listItem)
 
-    if(listItem.priority.toString() === 'hi'){
-        let entry = document.createElement('li');
-        entry.appendChild(document.createTextNode(listItem.text.toString()));
-        ol.appendChild(entry);
+    if (listItem.priority.toString() === 'hi') {
+        let li = document.createElement('li');
+        li.textContent = listItem.text + '\t' + date.toString();
+        li.style = "color: red";
+        //add designated button
+        ol.appendChild(li);
         console.log('added')
         //create relative list item with red color text or smth
-    }
-    else if(listItem.priority.toString() === 'med'){
-
-    }
-    else if(listItem.priority.toString() === 'low'){
-
+    } else if (listItem.priority.toString() === 'med') {
+        let li = document.createElement('li');
+        li.textContent = listItem.text + '\t' + date.toString();
+        li.style = "color: darkorange";
+        ol.appendChild(li);
+        console.log('added')
+    } else if (listItem.priority.toString() === 'low') {
+        let li = document.createElement('li');
+        li.textContent = listItem.text + '\t' + date.toString();
+        ol.appendChild(li);
+        console.log('added')
     }
 
 }

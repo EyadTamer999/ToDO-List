@@ -9,9 +9,7 @@ function addToDo() {
     //get our data then add it to a new obj
     //console.log({txt,date,priority});
     let listItem = {
-        'text': txt,
-        'date': date,
-        'priority': priority
+        'text': txt, 'date': date, 'priority': priority
     };
 
     let ol = document.getElementById('toDoListOrderedList');
@@ -42,11 +40,35 @@ function addToDo() {
         let li = document.createElement('li');
         li.textContent = listItem.text + '\t' + date.toString();
         li.style = "color: darkorange";
+        btnRm = document.createElement('button');
+        btnRm.className = 'toDoListItemRemove';
+        rmImg = document.createElement('img');
+        rmImg.src = 'X.png';
+        rmImg.alt = 'x';
+        rmImg.style = 'height: 20px; width: 20px';
+        btnRm.appendChild(rmImg);
+
+        //an ol will have li, an li will have a button, and a button will have an img
+        // the button deletes itself, its child, and it's first parent (li)
+
+        li.appendChild(btnRm);
         ol.appendChild(li);
         console.log('added')
     } else if (listItem.priority.toString() === 'low') {
         let li = document.createElement('li');
         li.textContent = listItem.text + '\t' + date.toString();
+        btnRm = document.createElement('button');
+        btnRm.className = 'toDoListItemRemove';
+        rmImg = document.createElement('img');
+        rmImg.src = 'X.png';
+        rmImg.alt = 'x';
+        rmImg.style = 'height: 20px; width: 20px';
+        btnRm.appendChild(rmImg);
+
+        //an ol will have li, an li will have a button, and a button will have an img
+        // the button deletes itself, its child, and it's first parent (li)
+
+        li.appendChild(btnRm);
         ol.appendChild(li);
         console.log('added')
     }

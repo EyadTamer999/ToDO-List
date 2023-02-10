@@ -3,6 +3,12 @@
 let itemID = 0;
 
 function addToDo() {
+
+    //check if there exists a json file to store list items as data that will be imported
+    //if exists then we will read the data and store it in an array and add it to the ol
+    //if !exist then we will write a file that will store the data
+
+
     let txt = document.getElementById("input").value.toString();
     let date = document.getElementById('date').value.toString();
     let priority = document.getElementById('priority').value.toString();

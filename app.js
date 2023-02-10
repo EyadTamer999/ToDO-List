@@ -59,6 +59,7 @@ function addToDo() {
         li.textContent = listItem.text + '\t' + date.toString();
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
+        btnRm.onclick = 'removeItem()';
         rmImg = document.createElement('img');
         rmImg.src = 'X.png';
         rmImg.alt = 'x';
@@ -73,4 +74,8 @@ function addToDo() {
         console.log('added')
     }
 
+}
+
+function removeItem(){
+    //remove item corresponding to the button
 }

@@ -1,7 +1,8 @@
 # ToDO-List
 Basic To Do list WebApp that lets you add things
 <br>
-to be done on a specified date and with specified priority.
+to be done on a specified date and with specified priority (high is `red`, medium is `orange`, and low is `black`).
+
 
 
 ### **_ideas for features to be added:_**

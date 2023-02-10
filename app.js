@@ -19,11 +19,20 @@ function addToDo() {
 
     if (listItem.priority.toString() === 'hi') {
         let li = document.createElement('li');
-        li.id = 'item'+li.ID;
+        li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + date.toString();
         li.style = "color: red";
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
+
+        btnRm.onclick = function removeItem() {
+            //remove item corresponding to the button
+            let element = document.getElementById("item" + btnRm.id);
+            element.remove();
+            console.log('removed')
+        }
+
+
         rmImg = document.createElement('img');
         rmImg.src = 'X.png';
         rmImg.alt = 'x';
@@ -40,11 +49,20 @@ function addToDo() {
         //create relative list item with red color text or smth
     } else if (listItem.priority.toString() === 'med') {
         let li = document.createElement('li');
-        li.id = 'item'+li.ID;
+        li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + date.toString();
         li.style = "color: darkorange";
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
+
+        btnRm.onclick = function removeItem() {
+            //remove item corresponding to the button
+            let element = document.getElementById("item" + btnRm.id);
+            element.remove();
+            console.log('removed')
+        }
+
+
         btnRm.id = itemID;
         rmImg = document.createElement('img');
         rmImg.src = 'X.png';
@@ -60,7 +78,7 @@ function addToDo() {
         console.log('added')
     } else if (listItem.priority.toString() === 'low') {
         let li = document.createElement('li');
-        li.id = 'item'+li.ID;
+        li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + date.toString();
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
@@ -68,11 +86,10 @@ function addToDo() {
 
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
-            let element = document.getElementById("item"+btnRm.id);
+            let element = document.getElementById("item" + btnRm.id);
             element.remove();
-
+            console.log('removed')
         }
-
 
         rmImg = document.createElement('img');
         rmImg.src = 'X.png';

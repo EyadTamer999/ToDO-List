@@ -27,8 +27,8 @@ function addToDo() {
 
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
-            let element = document.getElementById("item" + btnRm.id);
-            element.remove();
+            //let element = document.getElementById("item" + btnRm.id);
+            li.remove();
             console.log('removed')
         }
 
@@ -57,8 +57,8 @@ function addToDo() {
 
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
-            let element = document.getElementById("item" + btnRm.id);
-            element.remove();
+            //let element = document.getElementById("item" + btnRm.id);
+            li.remove();
             console.log('removed')
         }
 
@@ -86,8 +86,8 @@ function addToDo() {
 
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
-            let element = document.getElementById("item" + btnRm.id);
-            element.remove();
+            //let element = document.getElementById("item" + btnRm.id);
+            li.remove();
             console.log('removed')
         }
 

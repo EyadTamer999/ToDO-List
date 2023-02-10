@@ -13,3 +13,6 @@ to be done on a specified date and with specified priority (high is `red`, mediu
 &nbsp; • store the data in a json that can automatically import itself.
 <br>
 &nbsp; • alarm system or notification system.
+<br>
+&nbsp; • better looking stylesheet.
+<br>

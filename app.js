@@ -8,6 +8,8 @@ function addToDo() {
     //if exists then we will read the data and store it in an array and add it to the ol
     //if !exist then we will write a file that will store the data
 
+    //TODO
+    //clear text box and date field after adding
 
     let txt = document.getElementById("input").value.toString();
     let date = document.getElementById('date').value.toString();

@@ -22,6 +22,12 @@ function addToDo() {
 
     //console.log(listItem)
 
+    //checks if any text field is empty and sends an error message
+    if(listItem.text === "" || listItem.date === ""){
+        window.alert("A field is empty!\nPlease enter TODO item and set date!");
+        return;
+    }
+
     if (listItem.priority.toString() === 'hi') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;

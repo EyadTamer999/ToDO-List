@@ -5,6 +5,13 @@ let itemID = 0;
 function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
     // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
+    let date = new Date().toLocaleDateString();
+
+
+    //window.setTimeout(function() { soundAlarm() },
+    //            alarmDate.getTime() - new Date().getTime()); <--- check this idea out, get current time and count down to the time of the set time
+    //                                                              basically dress up timer as an alarm.
+
 }
 
 function addToDo() {

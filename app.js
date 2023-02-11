@@ -5,13 +5,10 @@ let itemID = 0;
 let input = document.getElementById('input');
 let inputDate = document.getElementById('date');
 function addToDo() {
-
+    //TODO
     //check if there exists a json file to store list items as data that will be imported
     //if exists then we will read the data and store it in an array and add it to the ol
     //if !exist then we will write a file that will store the data
-
-    //TODO
-    //clear text box and date field after adding
 
     let txt = document.getElementById("input").value.toString();
     let date = document.getElementById('date').value.toString();
@@ -22,6 +19,9 @@ function addToDo() {
     let listItem = {
         'ID': itemID, 'text': txt, 'date': date, 'priority': priority
     };
+
+    input.textContent = '';
+    inputDate.textContent = '';
 
     let ol = document.getElementById('toDoListOrderedList');
 
@@ -39,8 +39,6 @@ function addToDo() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
-            input.textContent = '';
-            inputDate.textContent = '';
             console.log('removed')
         }
 
@@ -71,8 +69,6 @@ function addToDo() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
-            input.textContent = '';
-            inputDate.textContent = '';
             console.log('removed')
         }
 
@@ -102,8 +98,6 @@ function addToDo() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
-            input.textContent = '';
-            inputDate.textContent = '';
             console.log('removed')
         }
 

@@ -1,6 +1,11 @@
-//take input from text field and date, assing it to an object enrty that will have: content, date, priority, isDone
+//take input from text field and date, passing it to an object entry that will have: content, date, priority, isDone
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
 let itemID = 0;
+
+function alarm() {
+    // we will keep calling this function to keep track of date and time and compare that date and time
+    // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
+}
 
 function addToDo() {
     //TODO
@@ -23,7 +28,7 @@ function addToDo() {
     //console.log(listItem)
 
     //checks if any text field is empty and sends an error message
-    if(listItem.text === "" || listItem.date === ""){
+    if (listItem.text === "" || listItem.date === "") {
         window.alert("A field is empty!\nPlease enter TODO item and set date!");
         return;
     }

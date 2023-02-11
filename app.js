@@ -2,14 +2,12 @@
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
 let itemID = 0;
 
-let input = document.getElementById('input');
-let inputDate = document.getElementById('date');
 function addToDo() {
     //TODO
     //check if there exists a json file to store list items as data that will be imported
     //if exists then we will read the data and store it in an array and add it to the ol
     //if !exist then we will write a file that will store the data
-
+    // add reset to the inputs
     let txt = document.getElementById("input").value.toString();
     let date = document.getElementById('date').value.toString();
     let priority = document.getElementById('priority').value.toString();
@@ -19,9 +17,6 @@ function addToDo() {
     let listItem = {
         'ID': itemID, 'text': txt, 'date': date, 'priority': priority
     };
-
-    input.textContent = '';
-    inputDate.textContent = '';
 
     let ol = document.getElementById('toDoListOrderedList');
 

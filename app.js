@@ -2,6 +2,8 @@
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
 let itemID = 0;
 
+let input = document.getElementById('input');
+let inputDate = document.getElementById('date');
 function addToDo() {
 
     //check if there exists a json file to store list items as data that will be imported
@@ -37,6 +39,8 @@ function addToDo() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
+            input.textContent = '';
+            inputDate.textContent = '';
             console.log('removed')
         }
 
@@ -67,6 +71,8 @@ function addToDo() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
+            input.textContent = '';
+            inputDate.textContent = '';
             console.log('removed')
         }
 
@@ -96,6 +102,8 @@ function addToDo() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
+            input.textContent = '';
+            inputDate.textContent = '';
             console.log('removed')
         }
 

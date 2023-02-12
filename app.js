@@ -108,14 +108,4 @@ function addToDo() {
         ol.appendChild(li);
         console.log('added');
     }
-    const data = JSON.stringify(listItem);
-
-    const fileSystem = require('browserify-fs');
-    fileSystem.writeFile("./newItem.json", data, err => {
-        if (err) {
-            console.log("Error writing file", err)
-        } else {
-            console.log('JSON data is written to the file successfully')
-        }
-    });
 }

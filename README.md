@@ -4,7 +4,7 @@ Basic To Do list WebApp that lets you add things
 to be done on a specified date and with specified priority (high is `red`, medium is `orange`, and low is `black`).
 <br>
 use this:
-`npm install browserify-fs`
+<br>
 
 ### **_ideas for features to be added:_**
 

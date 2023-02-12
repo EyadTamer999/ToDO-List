@@ -24,7 +24,10 @@ function addToDo() {
     //get our data then add it to a new obj
     //console.log({txt,date,priority});
     let listItem = {
-        'ID': itemID, 'text': txt, 'date': date, 'priority': priority
+        'ID': itemID,
+        'text': txt,
+        'date': date,
+        'priority': priority
     };
     let ol = document.getElementById('toDoListOrderedList');
     //console.log(listItem)

@@ -1,7 +1,7 @@
+const fileSystem = require('browserify-fs');
 //take input from text field and date, passing it to an object entry that will have: content, date, priority, isDone
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
 let itemID = 0;
-
 function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
     // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
@@ -109,4 +109,13 @@ function addToDo() {
         ol.appendChild(li);
         console.log('added');
     }
+    const data = JSON.stringify(listItem)
+
+    fileSystem.writeFile("./newItem.json", data, err=>{
+        if(err){
+            console.log("Error writing file" ,err)
+        } else {
+            console.log('JSON data is written to the file successfully')
+        }
+    })
 }

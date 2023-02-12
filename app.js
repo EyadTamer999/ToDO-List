@@ -99,7 +99,7 @@ function addToDo() {
         li.appendChild(btnRm);
         ol.appendChild(li);
         console.log('added')
-    } else if (listItem.priority.toString() === 'low') {
+    } else {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + date.toString();

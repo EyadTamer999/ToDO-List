@@ -11,7 +11,7 @@ function alarm() {
     //window.setTimeout(function() { soundAlarm() },
     //            alarmDate.getTime() - new Date().getTime()); <--- check this idea out, get current time and count down to the time of the set time
     //                                                              basically dress up timer as an alarm.
-//save xmth
+
 }
 
 function addToDo() {

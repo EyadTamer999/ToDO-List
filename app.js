@@ -6,12 +6,9 @@ function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
     // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
     let date = new Date().toLocaleDateString();
-
-
     //window.setTimeout(function() { soundAlarm() },
     //            alarmDate.getTime() - new Date().getTime()); <--- check this idea out, get current time and count down to the time of the set time
     //                                                              basically dress up timer as an alarm.
-
 }
 
 function addToDo() {
@@ -29,17 +26,13 @@ function addToDo() {
     let listItem = {
         'ID': itemID, 'text': txt, 'date': date, 'priority': priority
     };
-
     let ol = document.getElementById('toDoListOrderedList');
-
     //console.log(listItem)
-
     //checks if any text field is empty and sends an error message
     if (listItem.text === "" || listItem.date === "") {
         window.alert("A field is empty!\nPlease enter TODO item and set date!");
         return;
     }
-
     if (listItem.priority.toString() === 'hi') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
@@ -47,86 +40,70 @@ function addToDo() {
         li.style = "color: red";
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
-
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
-            console.log('removed')
+            console.log('removed');
         }
-
-
         rmImg = document.createElement('img');
         rmImg.src = 'X.png';
         rmImg.alt = 'x';
         rmImg.style = 'height: 20px; width: 20px';
         btnRm.appendChild(rmImg);
-
         //an ol will have li, an li will have a button, and a button will have an img
         // the button deletes itself, its child, and it's first parent (li)
-
         li.appendChild(btnRm);
         //add designated button
         ol.appendChild(li);
-        console.log('added')
+        console.log('added');
         //create relative list item with red color text or smth
-    } else if (listItem.priority.toString() === 'med') {
+    } else let rmImg;
+    if (listItem.priority.toString() === 'med') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + date.toString();
         li.style = "color: darkorange";
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
-
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
-            console.log('removed')
+            console.log('removed');
         }
-
-
         btnRm.id = itemID;
         rmImg = document.createElement('img');
         rmImg.src = 'X.png';
         rmImg.alt = 'x';
         rmImg.style = 'height: 20px; width: 20px';
         btnRm.appendChild(rmImg);
-
         //an ol will have li, an li will have a button, and a button will have an img
         // the button deletes itself, its child, and it's first parent (li)
-
         li.appendChild(btnRm);
         ol.appendChild(li);
-        console.log('added')
+        console.log('added');
     } else {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + date.toString();
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
-
-
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
             //let element = document.getElementById("item" + btnRm.id);
             li.remove();
-            console.log('removed')
+            console.log('removed');
         }
-
         rmImg = document.createElement('img');
         rmImg.src = 'X.png';
         rmImg.alt = 'x';
         rmImg.style = 'height: 20px; width: 20px';
         btnRm.appendChild(rmImg);
-
         //an ol will have li, an li will have a button, and a button will have an img
         // the button deletes itself, its child, and it's first parent (li)
-
         li.appendChild(btnRm);
         ol.appendChild(li);
-        console.log('added')
+        console.log('added');
     }
-
 }
-

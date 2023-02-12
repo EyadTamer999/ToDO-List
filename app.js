@@ -1,8 +1,6 @@
-const fileSystem = require('browserify-fs');
 //take input from text field and date, passing it to an object entry that will have: content, date, priority, isDone
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
 let itemID = 0;
-
 function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
     // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
@@ -18,10 +16,15 @@ function addToDo() {
     //if exists then we will read the data and store it in an array and add it to the ol
     //if !exist then we will write a file that will store the data
     // add reset to the inputs
+    if (document.getElementById("input").value.toString() === "" || document.getElementById('date').value.toString() === "") {
+        window.alert("A field is empty!\nPlease enter TODO item and set date!");
+        return;
+    }
     let txt = document.getElementById("input").value.toString();
     let date = document.getElementById('date').value.toString();
     let priority = document.getElementById('priority').value.toString();
     itemID++;
+    console.log(itemID)
     //get our data then add it to a new obj
     //console.log({txt,date,priority});
     let listItem = {
@@ -33,10 +36,6 @@ function addToDo() {
     let ol = document.getElementById('toDoListOrderedList');
     //console.log(listItem)
     //checks if any text field is empty and sends an error message
-    if (listItem.text === "" || listItem.date === "") {
-        window.alert("A field is empty!\nPlease enter TODO item and set date!");
-        return;
-    }
     if (listItem.priority.toString() === 'hi') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
@@ -111,6 +110,7 @@ function addToDo() {
     }
     const data = JSON.stringify(listItem);
 
+    const fileSystem = require('browserify-fs');
     fileSystem.writeFile("./newItem.json", data, err => {
         if (err) {
             console.log("Error writing file", err)

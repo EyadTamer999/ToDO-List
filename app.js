@@ -1,6 +1,5 @@
 //take input from text field and date, passing it to an object entry that will have: content, date, priority, isDone
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
-const fs = require('fs');
 let itemID = 0;
 
 function alarm() {
@@ -108,6 +107,8 @@ function addToDo() {
         // the button deletes itself, its child, and it's first parent (li)
         li.appendChild(btnRm);
         ol.appendChild(li);
+        //import fs
+        const fs = require('fs');
         //stringify listItem
         let json = JSON.stringify(listItem);
         //write the listItem to the JSON file

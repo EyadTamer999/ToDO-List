@@ -108,13 +108,11 @@ function addToDo() {
         li.appendChild(btnRm);
         ol.appendChild(li);
         //import fs
-        const fs = require('fs');
+        let fs = require('fs');
         //stringify listItem
         let json = JSON.stringify(listItem);
         //write the listItem to the JSON file
         fs.readFile('myjsonfile.json', 'utf8', function readFileCallback(err, data) {
-
-
             if (err) {
                 console.log(err);
             } else {

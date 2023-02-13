@@ -1,5 +1,6 @@
 //take input from text field and date, passing it to an object entry that will have: content, date, priority, isDone
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
+const fs = require('fs');
 let itemID = 0;
 function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
@@ -106,6 +107,18 @@ function addToDo() {
         // the button deletes itself, its child, and it's first parent (li)
         li.appendChild(btnRm);
         ol.appendChild(li);
+        //stringify listItem
+        let json = JSON.stringify(listItem);
+        //write the listItem to the JSON file
+        fs.readFile('myjsonfile.json', 'utf8', function readFileCallback(err, data){
+            if (err){
+                console.log(err);
+            } else {
+                obj = JSON.parse(data); //now it an object
+                obj.table.push({id: 2, square:3}); //add some data
+                json = JSON.stringify(obj); //convert it back to json
+                fs.writeFile('myjsonfile.json', json, 'utf8', callback); // write it back
+            }});
         console.log('added');
     }
 }

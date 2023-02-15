@@ -2,6 +2,8 @@
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
 let itemID = 0;
 
+let itemsArray = []
+
 function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
     // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
@@ -22,23 +24,20 @@ function addToDo() {
         return;
     }
 
-
-
     let txt = document.getElementById("input").value.toString();
     let date = document.getElementById('date').value.toString();
     let priority = document.getElementById('priority').value.toString();
     itemID++;
     console.log(itemID)
     //get our data then add it to a new obj
-    //console.log({txt,date,priority});
     let listItem = {
         'ID': itemID,
         'text': txt,
         'date': date,
         'priority': priority
     };
+
     let ol = document.getElementById('toDoListOrderedList');
-    //console.log(listItem)
     //checks if any text field is empty and sends an error message
     if (listItem.priority.toString() === 'hi') {
         let li = document.createElement('li');
@@ -49,7 +48,6 @@ function addToDo() {
         btnRm.className = 'toDoListItemRemove';
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
-            //let element = document.getElementById("item" + btnRm.id);
             li.remove();
             console.log('removed');
         }
@@ -74,7 +72,6 @@ function addToDo() {
         btnRm.className = 'toDoListItemRemove';
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
-            //let element = document.getElementById("item" + btnRm.id);
             li.remove();
             console.log('removed');
         }
@@ -97,7 +94,6 @@ function addToDo() {
         btnRm.className = 'toDoListItemRemove';
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
-            //let element = document.getElementById("item" + btnRm.id);
             li.remove();
             console.log('removed');
         }
@@ -122,4 +118,5 @@ function addToDo() {
         });
         console.log('added');
     }
+
 }

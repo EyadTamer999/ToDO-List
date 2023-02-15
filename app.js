@@ -124,15 +124,16 @@ function addToDo() {
 
 
 function setDate(){
-    // For todays date;
-    Date.prototype.today = function () {
-        return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
-    }
+    `use strict`
+    var datetime = new Date();
+    document.getElementById("date").textContent = datetime; //it will print on html page
 
-// For the time now
-    Date.prototype.timeNow = function () {
-        return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+    function refreshTime() {
+        const timeDisplay = document.getElementById("time");
+        const dateString = new Date().toLocaleString();
+        const formattedString = dateString.replace(", ", " - ");
+        timeDisplay.textContent = formattedString;
     }
+    setInterval(refreshTime, 1000);
 
-    document.getElementById('date').textContent = Date.prototype;
 }

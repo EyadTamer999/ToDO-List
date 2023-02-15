@@ -21,6 +21,9 @@ function addToDo() {
         window.alert("A field is empty!\nPlease enter TODO item and set date!");
         return;
     }
+
+
+
     let txt = document.getElementById("input").value.toString();
     let date = document.getElementById('date').value.toString();
     let priority = document.getElementById('priority').value.toString();

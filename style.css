@@ -65,17 +65,15 @@ input#date.date {
     margin-top: 10px;
     margin-bottom: 10px;
     color: whitesmoke;
-    align-content: center;
     display: flex;
     background-color: #141619 !important;
     border: none;
     border-radius: 10px;
 
-}
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(100%);
 }
+::-webkit-calendar-picker-indicator { background: ghostwhite; }
+::-webkit-calendar-picker-indicator { text-decoration-color: black; }
 
 div.toDoContainer {
     height: 55vh;

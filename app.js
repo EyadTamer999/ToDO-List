@@ -5,6 +5,7 @@
 let itemID = 0;
 
 let itemsArray = new Array();
+
 function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
     // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
@@ -120,10 +121,11 @@ function addToDo() {
 }
 
 //automatically sets date of today... no idea why it doesn't work
-function setDate(){
-    document.getElementById('date').valueAsDate = new Date();
-
-    document.getElementById('date').textContent = new Date();
-
-    console.log(document.getElementById('date').valueAsDate);
+function setDate() {
+    Date.prototype.toDateInputValue = (function () {
+        var local = new Date(this);
+        local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+        return local.toJSON().slice(0, 10);
+    });
+    document.getElementById('datePicker').value = new Date().toDateInputValue();
 }

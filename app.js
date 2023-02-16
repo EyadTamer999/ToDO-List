@@ -121,11 +121,27 @@ function addToDo() {
 }
 
 //automatically sets date of today... no idea why it doesn't work
-function setDate() {
-    Date.prototype.toDateInputValue = (function () {
-        var local = new Date(this);
-        local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-        return local.toJSON().slice(0, 10);
-    });
-    document.getElementById('datePicker').value = new Date().toDateInputValue();
+function getDate() {
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth()+1; //January is 0!
+    let yyyy = today.getFullYear();
+    let hh = today.getHours();
+    let mM = today.getMinutes();
+    let ss = today.getSeconds();
+    if(dd<10) {
+        dd = '0'+dd
+    }
+
+    if(mm<10) {
+        mm = '0'+mm
+    }
+
+    today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM + ':' + ss;
+    console.log(today);
+    document.getElementById("date").value = today;
 }
+
+window.onload = function() {
+    getDate();
+};

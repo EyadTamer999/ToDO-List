@@ -1,15 +1,15 @@
 let itemID = 0;
 
-let itemsArray = new Array();
+//let itemsArray = new Array();
 
-function alarm() {
+//function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
     // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
-    let date = new Date().toLocaleDateString();
+    //let date = new Date().toLocaleDateString();
     //window.setTimeout(function() { soundAlarm() },
     //            alarmDate.getTime() - new Date().getTime()); <--- check this idea out, get current time and count down to the time of the set time
     //                                                              basically dress up timer as an alarm.
-}
+//}
 
 //TODO
 //check if there exists a json file to store list items as data that will be imported
@@ -41,7 +41,7 @@ function addToDo() {
         'priority': priority
     };
 
-    itemsArray += [itemID, txt, date, priority];
+    //itemsArray += [itemID, txt, date, priority];
 
     let ol = document.getElementById('toDoListOrderedList');
     //checks if any text field is empty and sends an error message
@@ -50,7 +50,7 @@ function addToDo() {
         li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + date.toString();
         li.style = "color: red";
-        btnRm = document.createElement('button');
+        let btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
@@ -62,19 +62,19 @@ function addToDo() {
         rmImg.alt = 'x';
         rmImg.style = 'height: 20px; width: 20px';
         btnRm.appendChild(rmImg);
-        //an ol will have li, an li will have a button, and a button will have an img
+        //an ol will have li, a li will have a button, and a button will have an img
         // the button deletes itself, its child, and it's first parent (li)
         li.appendChild(btnRm);
         //add designated button
         ol.appendChild(li);
         console.log('added');
-        //create relative list item with red color text or smth
+        //create relative list item with red color text or something
     } else if (listItem.priority.toString() === 'med') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + date.toString();
         li.style = "color: darkorange";
-        btnRm = document.createElement('button');
+        let btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
         btnRm.onclick = function removeItem() {
             //remove item corresponding to the button
@@ -103,7 +103,7 @@ function addToDo() {
             li.remove();
             console.log('removed');
         }
-        rmImg = document.createElement('img');
+        let rmImg = document.createElement('img');
         rmImg.src = 'X.png';
         rmImg.alt = 'x';
         rmImg.style = 'height: 20px; width: 20px';
@@ -115,6 +115,7 @@ function addToDo() {
         console.log('added');
     }
 }
+
 function getDate() {
     let today = new Date();
     let dd = today.getDate();

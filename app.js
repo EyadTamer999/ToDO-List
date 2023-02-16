@@ -3,7 +3,6 @@
 let itemID = 0;
 
 let itemsArray = new Array();
-
 function alarm() {
     // we will keep calling this function to keep track of date and time and compare that date and time
     // with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
@@ -30,7 +29,6 @@ function addToDo() {
         window.alert("A field is empty!\nPlease enter TODO item and set date!");
         return;
     }
-
     let txt = document.getElementById("input").value.toString();
     let date = document.getElementById('date').value.toString();
     let priority = document.getElementById('priority').value.toString();
@@ -119,4 +117,8 @@ function addToDo() {
     }
 }
 
+function setDate(){
+    document.getElementById('date').valueAsDate = new Date();
 
+    document.getElementById('date').textContent = new Date();
+}

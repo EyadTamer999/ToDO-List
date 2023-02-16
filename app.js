@@ -1,7 +1,3 @@
-//take input from text field and date, passing it to an object entry that will have: content, date, priority, isDone
-// when the add button is pressed it is added to the array of buttons sorted by highest priority
-
-
 let itemID = 0;
 
 let itemsArray = new Array();
@@ -15,7 +11,11 @@ function alarm() {
     //                                                              basically dress up timer as an alarm.
 }
 
-
+//TODO
+//check if there exists a json file to store list items as data that will be imported
+//if exists then we will read the data and store it in an array and add it to the ol
+//if !exist then we will write a file that will store the data
+// add reset to the inputs
 //plan to read and write from json
 //first: read from the file and add the items to our list << this will be done once the page loads
 //second: if we want to write we will add it to the json file, and if we want to delete an item we will search for it in the file and delete it,
@@ -23,11 +23,7 @@ function alarm() {
 
 
 function addToDo() {
-    //TODO
-    //check if there exists a json file to store list items as data that will be imported
-    //if exists then we will read the data and store it in an array and add it to the ol
-    //if !exist then we will write a file that will store the data
-    // add reset to the inputs
+
     if (document.getElementById("input").value.toString() === "" || document.getElementById('date').value.toString() === "") {
         window.alert("A field is empty!\nPlease enter TODO item and set date!");
         return;
@@ -119,29 +115,26 @@ function addToDo() {
         console.log('added');
     }
 }
-
-//automatically sets date of today... no idea why it doesn't work
 function getDate() {
     let today = new Date();
     let dd = today.getDate();
-    let mm = today.getMonth()+1; //January is 0!
+    let mm = today.getMonth() + 1; //January is 0!
     let yyyy = today.getFullYear();
     let hh = today.getHours();
     let mM = today.getMinutes();
     let ss = today.getSeconds();
-    if(dd<10) {
-        dd = '0'+dd
+    if (dd < 10) {
+        dd = '0' + dd
     }
 
-    if(mm<10) {
-        mm = '0'+mm
+    if (mm < 10) {
+        mm = '0' + mm
     }
-
     today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM + ':' + ss;
-    console.log(today);
     document.getElementById("date").value = today;
 }
 
-window.onload = function() {
+//executes when the page loads
+window.onload = function () {
     getDate();
 };

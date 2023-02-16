@@ -1,5 +1,7 @@
 //take input from text field and date, passing it to an object entry that will have: content, date, priority, isDone
 // when the add button is pressed it is added to the array of buttons sorted by highest priority
+
+
 let itemID = 0;
 
 let itemsArray = new Array();
@@ -117,8 +119,11 @@ function addToDo() {
     }
 }
 
+//automatically sets date of today... no idea why it doesn't work
 function setDate(){
     document.getElementById('date').valueAsDate = new Date();
 
     document.getElementById('date').textContent = new Date();
+
+    console.log(document.getElementById('date').valueAsDate);
 }

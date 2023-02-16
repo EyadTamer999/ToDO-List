@@ -13,6 +13,13 @@ function alarm() {
     //                                                              basically dress up timer as an alarm.
 }
 
+
+//plan to read and write from json
+//first: read from the file and add the items to our list << this will be done once the page loads
+//second: if we want to write we will add it to the json file, and if we want to delete an item we will search for it in the file and delete it,
+// in addition to deletion from the html list itself.
+
+
 function addToDo() {
     //TODO
     //check if there exists a json file to store list items as data that will be imported

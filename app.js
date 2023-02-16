@@ -115,32 +115,8 @@ function addToDo() {
         // the button deletes itself, its child, and it's first parent (li)
         li.appendChild(btnRm);
         ol.appendChild(li);
-        //import fs
-        let fs = require('fs');
-
-        fs.readFile("./myjsonfile.json", "utf8", (err, jsonString) => {
-            if (err) {
-                console.log("File read failed:", err);
-                return;
-            }
-            console.log("File data:", jsonString);
-        });
         console.log('added');
     }
 }
 
 
-function setDate(){
-    `use strict`
-    var datetime = new Date();
-    document.getElementById("date").textContent = datetime; //it will print on html page
-
-    function refreshTime() {
-        const timeDisplay = document.getElementById("time");
-        const dateString = new Date().toLocaleString();
-        const formattedString = dateString.replace(", ", " - ");
-        timeDisplay.textContent = formattedString;
-    }
-    setInterval(refreshTime, 1000);
-
-}

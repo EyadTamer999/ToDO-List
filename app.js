@@ -22,14 +22,16 @@ let itemID = 0;
 // in addition to deletion from the html list itself.
 
 
+//user can set due date, however user cannot set start date but can only see once a list item has been added
+
 function addToDo() {
 
-    if (document.getElementById("input").value.toString() === "" || document.getElementById('date').value.toString() === "") {
-        window.alert("A field is empty!\nPlease enter TODO item and set date!");
+    if (document.getElementById("input").value.toString() === "" || document.getElementById('due-date').value.toString() === "") {
+        window.alert("A field is empty!\nPlease enter TODO item and set dueDate!");
         return;
     }
     let txt = document.getElementById("input").value.toString();
-    let date = document.getElementById('date').value.toString();
+    let dueDate = document.getElementById('due-date').value.toString();
     let priority = document.getElementById('priority').value.toString();
     itemID++;
     console.log(itemID)
@@ -37,18 +39,19 @@ function addToDo() {
     let listItem = {
         'ID': itemID,
         'text': txt,
-        'date': date,
+        'due-date': dueDate,
+        'start-date': startDate,
         'priority': priority
     };
 
-    //itemsArray += [itemID, txt, date, priority];
+    //itemsArray += [itemID, txt, dueDate, priority];
 
     let ol = document.getElementById('toDoListOrderedList');
     //checks if any text field is empty and sends an error message
     if (listItem.priority.toString() === 'hi') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + date.toString();
+        li.textContent = listItem.text + '\t' + dueDate.toString();
         li.style = "color: red";
         let btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
@@ -72,7 +75,7 @@ function addToDo() {
     } else if (listItem.priority.toString() === 'med') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + date.toString();
+        li.textContent = listItem.text + '\t' + dueDate.toString();
         li.style = "color: darkorange";
         let btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
@@ -95,7 +98,7 @@ function addToDo() {
     } else {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + date.toString();
+        li.textContent = listItem.text + '\t' + dueDate.toString();
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
         btnRm.onclick = function removeItem() {
@@ -116,6 +119,8 @@ function addToDo() {
     }
 }
 
+
+//change all this
 function getDate() {
     let today = new Date();
     let dd = today.getDate();
@@ -133,7 +138,7 @@ function getDate() {
     }
     let syncedTimeout = 1000 - today.getMilliseconds();
     today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM + ':' + ss;
-    document.getElementById("date").value = today;
+    //document.getElementById("").value = today;
     setTimeout(getDate, syncedTimeout);
 }
 

@@ -59,7 +59,21 @@ label {
     align-content: center;
 }
 
-input#date.date {
+/*input#start-date.date {*/
+/*    height: 40px;*/
+/*    width: 50%;*/
+/*    margin-top: 10px;*/
+/*    margin-bottom: 10px;*/
+/*    color: whitesmoke;*/
+/*    display: flex;*/
+/*    background-color: #141619 !important;*/
+/*    border: none;*/
+/*    border-radius: 10px;*/
+
+
+/*}*/
+
+input#due-date.date {
     height: 40px;
     width: 50%;
     margin-top: 10px;
@@ -76,7 +90,7 @@ input#date.date {
 ::-webkit-calendar-picker-indicator { text-decoration-color: black; }
 
 div.toDoContainer {
-    height: 55vh;
+    height: 24rem;
     border: none;
     border-radius: 12px;
     background-color: whitesmoke;

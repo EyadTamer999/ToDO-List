@@ -9,7 +9,7 @@ use this:
 
 ### **_ideas for features to be added:_**
 
-- [ ] automatically set time and date of today.
+- [x] automatically set time and date of today.
 - [ ] store the data in a json that can automatically import itself.
 - [ ] alarm system or notification system.
 - [ ] better looking stylesheet.

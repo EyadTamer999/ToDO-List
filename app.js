@@ -43,6 +43,7 @@ function addToDo() {
     let ol = document.getElementById('toDoListOrderedList');
     //checks if any text field is empty and sends an error message
     createListItem(listItem, ol);
+    document.getElementById("inputFields").reset()
 }
 
 

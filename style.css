@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Agency FB";
 }
 
 
@@ -88,6 +89,11 @@ input#due-date.date {
 }
 ::-webkit-calendar-picker-indicator { background: ghostwhite; }
 ::-webkit-calendar-picker-indicator { text-decoration-color: black; }
+
+#due-date-text{
+    flex-direction: row;
+
+}
 
 div.toDoContainer {
     height: 24rem;

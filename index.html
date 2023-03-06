@@ -16,15 +16,18 @@
 <div class="background">
     <div class="toDoContainer">
         <div>
-            <label>
-                <input id="input" class="input" placeholder="Type Here...">
-            </label>
-            
-            <label for="due-date">
-                set deadline:
-                <input id="due-date" class="date" name="date" type="datetime-local">
-            </label>
+            <form id="inputFields">
+                <label>
+                    <input id="input" class="input" placeholder="Type Here...">
+                </label>
 
+                <label for="due-date">
+                    <label id="due-date-text">
+                        set deadline:
+                    </label>
+                    <input id="due-date" class="date" name="date" type="datetime-local">
+                </label>
+            </form>
             <div class="dropdown">
                 <label>
                     <select id="priority" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"

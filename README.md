@@ -10,7 +10,7 @@ use this:
 ### **_ideas for features to be added:_**
 
 - [x] automatically set time and date of today.
-- [ ] add deadline calender.
+- [x] add deadline calender, and make it look better looking.
 - [ ] store the data in a json that can automatically import itself.
 - [ ] alarm system or notification system.
 - [ ] better looking stylesheet.

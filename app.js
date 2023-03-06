@@ -55,72 +55,46 @@ function addToDo() {
         li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
         li.style = "color: red";
-        let btnRm = document.createElement('button');
-        btnRm.className = 'toDoListItemRemove';
-        btnRm.onclick = function removeItem() {
-            //remove item corresponding to the button
-            li.remove();
-            console.log('removed');
-        }
-        rmImg = document.createElement('img');
-        rmImg.src = 'X.png';
-        rmImg.alt = 'x';
-        rmImg.style = 'height: 20px; width: 20px';
-        btnRm.appendChild(rmImg);
-        //an ol will have li, a li will have a button, and a button will have an img
-        // the button deletes itself, its child, and it's first parent (li)
-        li.appendChild(btnRm);
-        //add designated button
+        removeButton(itemID, li);
         ol.appendChild(li);
         console.log('added');
-        //create relative list item with red color text or something
     } else if (listItem.priority.toString() === 'med') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
         li.style = "color: darkorange";
-        let btnRm = document.createElement('button');
-        btnRm.className = 'toDoListItemRemove';
-        btnRm.onclick = function removeItem() {
-            //remove item corresponding to the button
-            li.remove();
-            console.log('removed');
-        }
-        btnRm.id = itemID;
-        rmImg = document.createElement('img');
-        rmImg.src = 'X.png';
-        rmImg.alt = 'x';
-        rmImg.style = 'height: 20px; width: 20px';
-        btnRm.appendChild(rmImg);
-        //an ol will have li, an li will have a button, and a button will have an img
-        // the button deletes itself, its child, and it's first parent (li)
-        li.appendChild(btnRm);
+        removeButton(itemID, li);
         ol.appendChild(li);
         console.log('added');
     } else {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
         li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
-        btnRm = document.createElement('button');
-        btnRm.className = 'toDoListItemRemove';
-        btnRm.onclick = function removeItem() {
-            //remove item corresponding to the button
-            li.remove();
-            console.log('removed');
-        }
-        let rmImg = document.createElement('img');
-        rmImg.src = 'X.png';
-        rmImg.alt = 'x';
-        rmImg.style = 'height: 20px; width: 20px';
-        btnRm.appendChild(rmImg);
-        //an ol will have li, an li will have a button, and a button will have an img
-        // the button deletes itself, its child, and it's first parent (li)
-        li.appendChild(btnRm);
+        removeButton(itemID, li);
         ol.appendChild(li);
         console.log('added');
     }
 }
 
+
+function removeButton(itemID, li) {
+    let btnRm = document.createElement('button');
+    btnRm.className = 'toDoListItemRemove';
+    btnRm.onclick = function removeItem() {
+        //remove item corresponding to the button
+        li.remove();
+        console.log('removed');
+    }
+    btnRm.id = itemID;
+    rmImg = document.createElement('img');
+    rmImg.src = 'X.png';
+    rmImg.alt = 'x';
+    rmImg.style = 'height: 20px; width: 20px';
+    btnRm.appendChild(rmImg);
+    //an ol will have li, an li will have a button, and a button will have an img
+    // the button deletes itself, its child, and it's first parent (li)
+    li.appendChild(btnRm);
+}
 
 //change all this
 function getDate() {

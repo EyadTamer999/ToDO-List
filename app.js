@@ -33,9 +33,11 @@ function addToDo() {
     let txt = document.getElementById("input").value.toString();
     let dueDate = document.getElementById('due-date').value.toString();
     let priority = document.getElementById('priority').value.toString();
+    let startDate = getDate();
     itemID++;
     console.log(itemID)
     //get our data then add it to a new obj
+
     let listItem = {
         'ID': itemID,
         'text': txt,
@@ -51,7 +53,7 @@ function addToDo() {
     if (listItem.priority.toString() === 'hi') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + dueDate.toString();
+        li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
         li.style = "color: red";
         let btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
@@ -75,7 +77,7 @@ function addToDo() {
     } else if (listItem.priority.toString() === 'med') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + dueDate.toString();
+        li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
         li.style = "color: darkorange";
         let btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
@@ -98,7 +100,7 @@ function addToDo() {
     } else {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + dueDate.toString();
+        li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
         btnRm = document.createElement('button');
         btnRm.className = 'toDoListItemRemove';
         btnRm.onclick = function removeItem() {
@@ -128,7 +130,7 @@ function getDate() {
     let yyyy = today.getFullYear();
     let hh = today.getHours();
     let mM = today.getMinutes();
-    let ss = today.getSeconds();
+    // let ss = today.getSeconds();
     if (dd < 10) {
         dd = '0' + dd
     }
@@ -136,13 +138,13 @@ function getDate() {
     if (mm < 10) {
         mm = '0' + mm
     }
-    let syncedTimeout = 1000 - today.getMilliseconds();
-    today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM + ':' + ss;
+    // let syncedTimeout = 1000 - today.getMilliseconds();
+    return today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM;
     //document.getElementById("").value = today;
-    setTimeout(getDate, syncedTimeout);
+    //setTimeout(getDate, syncedTimeout);
 }
 
-//executes when the page loads
-window.onload = function () {
-    getDate();
-};
+// //executes when the page loads
+// window.onload = function () {
+//     getDate();
+// };

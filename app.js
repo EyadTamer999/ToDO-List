@@ -106,13 +106,6 @@ function getDate() {
 
     if (mm < 10) mm = '0' + mm
 
-    // let syncedTimeout = 1000 - today.getMilliseconds();
     return today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM;
-    //document.getElementById("").value = today;
-    //setTimeout(getDate, syncedTimeout);
 }
 
-// //executes when the page loads
-// window.onload = function () {
-//     getDate();
-// };

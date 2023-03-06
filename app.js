@@ -25,7 +25,6 @@ let itemID = 0;
 //user can set due date, however user cannot set start date but can only see once a list item has been added
 
 function addToDo() {
-
     if (document.getElementById("input").value.toString() === "" || document.getElementById('due-date').value.toString() === "") {
         window.alert("A field is empty!\nPlease enter TODO item and set dueDate!");
         return;
@@ -37,23 +36,21 @@ function addToDo() {
     itemID++;
     console.log(itemID)
     //get our data then add it to a new obj
-
     let listItem = {
-        'ID': itemID,
-        'text': txt,
-        'due-date': dueDate,
-        'start-date': startDate,
-        'priority': priority
+        'ID': itemID, 'text': txt, 'due-date': dueDate, 'start-date': startDate, 'priority': priority
     };
-
     //itemsArray += [itemID, txt, dueDate, priority];
-
     let ol = document.getElementById('toDoListOrderedList');
     //checks if any text field is empty and sends an error message
+    createListItem(listItem, ol);
+}
+
+
+function createListItem(listItem, ol) {
     if (listItem.priority.toString() === 'hi') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
+        li.textContent = listItem.text + '\t' + listItem["due-date"].toString() + '\n' + 'Created at: ' + listItem["start-date"].toString();
         li.style = "color: red";
         removeButton(itemID, li);
         ol.appendChild(li);
@@ -61,7 +58,7 @@ function addToDo() {
     } else if (listItem.priority.toString() === 'med') {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
+        li.textContent = listItem.text + '\t' + listItem["due-date"].toString() + '\n' + 'Created at: ' + listItem["start-date"].toString();
         li.style = "color: darkorange";
         removeButton(itemID, li);
         ol.appendChild(li);
@@ -69,7 +66,7 @@ function addToDo() {
     } else {
         let li = document.createElement('li');
         li.id = 'item' + li.ID;
-        li.textContent = listItem.text + '\t' + dueDate.toString() + '\n' + 'Created at: ' + startDate;
+        li.textContent = listItem.text + '\t' + listItem["due-date"].toString() + '\n' + 'Created at: ' + listItem["start-date"].toString();
         removeButton(itemID, li);
         ol.appendChild(li);
         console.log('added');
@@ -105,13 +102,10 @@ function getDate() {
     let hh = today.getHours();
     let mM = today.getMinutes();
     // let ss = today.getSeconds();
-    if (dd < 10) {
-        dd = '0' + dd
-    }
+    if (dd < 10) dd = '0' + dd
 
-    if (mm < 10) {
-        mm = '0' + mm
-    }
+    if (mm < 10) mm = '0' + mm
+
     // let syncedTimeout = 1000 - today.getMilliseconds();
     return today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM;
     //document.getElementById("").value = today;

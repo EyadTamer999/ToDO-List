@@ -1,15 +1,10 @@
 let itemID = 0;
 
-//let itemsArray = new Array();
+function alarm(dueDate) {
+    if(getDate() === dueDate){
 
-//function alarm() {
-// we will keep calling this function to keep track of date and time and compare that date and time
-// with the list items we have, and if we have an item that aligns with our current date and time we will play an audio file
-//let date = new Date().toLocaleDateString();
-//window.setTimeout(function() { soundAlarm() },
-//            alarmDate.getTime() - new Date().getTime()); <--- check this idea out, get current time and count down to the time of the set time
-//                                                              basically dress up timer as an alarm.
-//}
+    }
+}
 
 //TODO
 //check if there exists a json file to store list items as data that will be imported
@@ -26,7 +21,7 @@ let itemID = 0;
 
 function addToDo() {
     if (document.getElementById("input").value.toString() === "" || document.getElementById('due-date').value.toString() === "") {
-        window.alert("A field is empty!\nPlease enter TODO item and set dueDate!");
+        window.alert("A field is empty!\nPlease enter TODO item and set deadline date!");
         return;
     }
     let txt = document.getElementById("input").value.toString();

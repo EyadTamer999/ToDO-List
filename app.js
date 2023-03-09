@@ -1,4 +1,4 @@
-import fs from "fs";
+// import fs from "fs";
 
 let itemID = 0;
 //TODO
@@ -11,12 +11,12 @@ let itemID = 0;
 //second: if we want to write we will add it to the json file, and if we want to delete an item we will search for it in the file and delete it,
 // in addition to deletion from the html list itself.
 
-function writeDataToFIle(listItem) {
-    let listItems = JSON.stringify(listItem);
-    fs.writeFile("listItems.json", listItems, function (err) {
-        if (err) console.log('error', err);
-    });
-}
+// function writeDataToFIle(listItem) {
+//     let listItems = JSON.stringify(listItem);
+//     fs.writeFile("listItems.json", listItems, function (err) {
+//         if (err) console.log('error', err);
+//     });
+// }
 
 //user can set due date, however user cannot set start date but can only see once a list item has been added
 function addToDo() {
@@ -29,12 +29,12 @@ function addToDo() {
     let priority = document.getElementById('priority').value.toString();
     let startDate = getDate();
 
-    if (dueDate - startDate >= 0) {
-        setTimeout(() => {
-            let alarm = new Audio('alarm.mp3')
-            alarm.play();
-        }, dueDate - startDate);
-    }
+    // if (dueDate - startDate >= 0) {
+    //     setTimeout(() => {
+    //         let alarm = new Audio('alarm.mp3')
+    //         alarm.play();
+    //     }, dueDate - startDate);
+    // }
 
     itemID++;
     console.log(itemID)
@@ -43,7 +43,7 @@ function addToDo() {
         'ID': itemID, 'text': txt, 'due-date': dueDate, 'start-date': startDate, 'priority': priority
     };
 
-    writeDataToFIle(listItem)
+    // writeDataToFIle(listItem)
     let ol = document.getElementById('toDoListOrderedList');
     //checks if any text field is empty and sends an error message
     createListItem(listItem, ol);

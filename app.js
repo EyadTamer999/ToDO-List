@@ -1,8 +1,9 @@
 let itemID = 0;
 
 function alarm(dueDate) {
-    if(getDate() === dueDate){
-
+    if (getDate() === dueDate) {
+        alarm = new Audio('alarm.mp3');
+        alarm.play();
     }
 }
 
@@ -38,6 +39,7 @@ function addToDo() {
     let ol = document.getElementById('toDoListOrderedList');
     //checks if any text field is empty and sends an error message
     createListItem(listItem, ol);
+
     document.getElementById("inputFields").reset()
 }
 
@@ -67,6 +69,8 @@ function createListItem(listItem, ol) {
         ol.appendChild(li);
         console.log('added');
     }
+    click = new Audio('pop.mp3');
+    click.play();
 }
 
 
@@ -76,7 +80,8 @@ function removeButton(itemID, li) {
     btnRm.onclick = function removeItem() {
         //remove item corresponding to the button
         li.remove();
-        console.log('removed');
+        click = new Audio('pop.mp3');
+        click.play();
     }
     btnRm.id = itemID;
     rmImg = document.createElement('img');
@@ -102,6 +107,6 @@ function getDate() {
 
     if (mm < 10) mm = '0' + mm
 
-    return today = yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM;
+    return yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM;
 }
 

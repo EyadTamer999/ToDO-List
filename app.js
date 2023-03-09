@@ -1,4 +1,4 @@
-import fs from "fs";
+const fileSystem = require("browserify-fs")
 
 let itemID = 0;
 //TODO
@@ -13,9 +13,23 @@ let itemID = 0;
 
 function writeDataToFIle(listItem) {
     let listItems = JSON.stringify(listItem);
-    fs.writeFile("listItems.json", listItems, function (err) {
-        if (err) console.log('error', err);
-    });
+
+
+    fileSystem.writeFile("./ListItems.json", listItems, err=>{
+        if(err){
+            console.log("Error writing file" ,err)
+        } else {
+            console.log('JSON data is written to the file successfully')
+        }
+    })
+
+    fileSystem.readFile("./ListItems.json", (err, listItems) => {
+        if (err) {
+            console.log("File reading failed", err)
+            return
+        }
+        console.log("File data:", listItems)
+    })
 }
 
 //user can set due date, however user cannot set start date but can only see once a list item has been added

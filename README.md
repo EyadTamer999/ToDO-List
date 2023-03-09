@@ -13,6 +13,7 @@ use this:
 
 - [x] automatically set time and date of today.
 - [x] add deadline calendar, and make it look better looking.
-- [ ] store the data in a json that can automatically import itself.
 - [ ] alarm system or notification system.
+- [ ] add sorting for priority.
 - [ ] better looking stylesheet.
+- [ ] store the data in a json that can automatically import itself (needs API).

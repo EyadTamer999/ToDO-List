@@ -1,5 +1,6 @@
+import fs from "fs";
+
 let itemID = 0;
-import writeDataToFIle from './jsonWriter'
 //TODO
 //check if there exists a json file to store list items as data that will be imported
 //if exists then we will read the data and store it in an array and add it to the ol
@@ -10,6 +11,12 @@ import writeDataToFIle from './jsonWriter'
 //second: if we want to write we will add it to the json file, and if we want to delete an item we will search for it in the file and delete it,
 // in addition to deletion from the html list itself.
 
+function writeDataToFIle(listItem) {
+    let listItems = JSON.stringify(listItem);
+    fs.writeFile("listItems.json", listItems, function (err) {
+        if (err) console.log('error', err);
+    });
+}
 
 //user can set due date, however user cannot set start date but can only see once a list item has been added
 function addToDo() {

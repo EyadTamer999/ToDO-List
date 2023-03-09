@@ -1,6 +1,4 @@
 * {
-    margin: 0px;
-    padding: 0;
     font-family: "Agency FB", system-ui;
 }
 
@@ -20,11 +18,13 @@ body > div {
 
 body {
     height: 100%;
-    margin: 40px !important;
-    padding: 10px !important;
+    margin: 5rem !important;
+    padding: 3rem !important;
     background: linear-gradient(45deg, transparent 0%, transparent 57%, #423246 100%),
     linear-gradient(-45deg, #1f1f8c 0%, #bb0e5f 0.3%, #28032f 112%, transparent 11%),
     linear-gradient(-90deg, #1f1f8c 100%, #bb0e5f 65%, transparent 20%);
+    transform: scale(1.1);
+    transform-origin: 0 0;
 
 }
 
@@ -159,6 +159,7 @@ div.toDoListContainer {
     justify-content: center;
 
 }
-li{
+
+li {
     font-size: 1.25rem;
 }

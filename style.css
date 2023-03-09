@@ -1,8 +1,7 @@
 * {
-    margin: 0;
+    margin: 0px;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Agency FB";
+    font-family: "Agency FB", system-ui;
 }
 
 
@@ -11,6 +10,7 @@ html {
     justify-content: center !important;
     align-items: normal !important;
     height: 100%;
+    overflow: hidden;
 }
 
 body > div {
@@ -117,7 +117,7 @@ div.toDoContainer {
 
 
 div.toDoListContainer {
-    margin-top: 3cm !important;
+    margin-top: 5rem !important;
     padding-top: 1rem;
     border: ridge !important;
     border-radius: 12px;
@@ -126,7 +126,8 @@ div.toDoListContainer {
 
 .toDoListOrderedList {
     display: block;
-
+    overflow-y: auto;
+    height: 8rem;
 }
 
 .dropdown {
@@ -157,4 +158,7 @@ div.toDoListContainer {
     align-items: center;
     justify-content: center;
 
+}
+li{
+    font-size: 1.25rem;
 }

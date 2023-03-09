@@ -15,5 +15,4 @@ use this:
 - [x] add deadline calendar, and make it look better looking.
 - [ ] alarm system or notification system.
 - [ ] add sorting for priority.
-- [ ] better looking stylesheet.
-- [ ] store the data in a json that can automatically import itself (needs API).
+- [ ] store the data, so it's not gone when refreshing page.

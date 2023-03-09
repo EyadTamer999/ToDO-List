@@ -1,6 +1,8 @@
 let itemID = 0;
 
 
+//TODO read about CSV in js
+
 //user can set due date, however user cannot set start date but can only see once a list item has been added
 function addToDo() {
     if (document.getElementById("input").value.toString() === "" || document.getElementById('due-date').value.toString() === "") {

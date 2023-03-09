@@ -1,12 +1,5 @@
 let itemID = 0;
-
-function alarm(dueDate) {
-    if (getDate() === dueDate) {
-        alarm = new Audio('alarm.mp3');
-        alarm.play();
-    }
-}
-
+import writeDataToFIle from './jsonWriter'
 //TODO
 //check if there exists a json file to store list items as data that will be imported
 //if exists then we will read the data and store it in an array and add it to the ol
@@ -19,7 +12,6 @@ function alarm(dueDate) {
 
 
 //user can set due date, however user cannot set start date but can only see once a list item has been added
-
 function addToDo() {
     if (document.getElementById("input").value.toString() === "" || document.getElementById('due-date').value.toString() === "") {
         window.alert("A field is empty!\nPlease enter TODO item and set deadline date!");
@@ -29,13 +21,22 @@ function addToDo() {
     let dueDate = document.getElementById('due-date').value.toString();
     let priority = document.getElementById('priority').value.toString();
     let startDate = getDate();
+
+    if (dueDate - startDate >= 0) {
+        setTimeout(() => {
+            let alarm = new Audio('alarm.mp3')
+            alarm.play();
+        }, dueDate - startDate);
+    }
+
     itemID++;
     console.log(itemID)
     //get our data then add it to a new obj
     let listItem = {
         'ID': itemID, 'text': txt, 'due-date': dueDate, 'start-date': startDate, 'priority': priority
     };
-    //itemsArray += [itemID, txt, dueDate, priority];
+
+    writeDataToFIle(listItem)
     let ol = document.getElementById('toDoListOrderedList');
     //checks if any text field is empty and sends an error message
     createListItem(listItem, ol);
@@ -69,7 +70,7 @@ function createListItem(listItem, ol) {
         ol.appendChild(li);
         console.log('added');
     }
-    click = new Audio('pop.mp3');
+    let click = new Audio('pop.mp3');
     click.play();
 }
 
@@ -80,11 +81,11 @@ function removeButton(itemID, li) {
     btnRm.onclick = function removeItem() {
         //remove item corresponding to the button
         li.remove();
-        click = new Audio('pop.mp3');
+        let click = new Audio('pop.mp3');
         click.play();
     }
     btnRm.id = itemID;
-    rmImg = document.createElement('img');
+    let rmImg = document.createElement('img');
     rmImg.src = 'X.png';
     rmImg.alt = 'x';
     rmImg.style = 'height: 20px; width: 20px';
@@ -96,6 +97,7 @@ function removeButton(itemID, li) {
 
 //change all this
 function getDate() {
+
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth() + 1; //January is 0!
@@ -109,4 +111,5 @@ function getDate() {
 
     return yyyy + '-' + mm + '-' + dd + 'T' + hh + ':' + mM;
 }
+
 
